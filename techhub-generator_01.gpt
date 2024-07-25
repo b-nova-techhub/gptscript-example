@@ -1,0 +1,6 @@
+description: Creates a Techhub thumbnail and title using a script.
+args: link: The web link for which the title and thumbnail will be created.
+
+Do the following steps in ascending order:
+1. Develop a suitable title for the Techhub based on the link. Also create a description for a blog article based on the link.
+2. Print the title and the description on the screen

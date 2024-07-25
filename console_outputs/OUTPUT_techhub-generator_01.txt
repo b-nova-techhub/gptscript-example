@@ -1,0 +1,14 @@
+18:05:10 started  [main] [input=--link https://docs.gptscript.ai/]
+18:05:11 sent     [main]
+18:05:14 ended    [main] [output=**Title:** Exploring GPTScript: The Future of AI-Powered Scripting\n\n**Description:** Dive into the w...]
+18:05:14 usage    [total=237] [prompt=146] [completion=91]
+
+INPUT:
+
+--link https://docs.gptscript.ai/
+
+OUTPUT:
+
+**Title:** Exploring GPTScript: The Future of AI-Powered Scripting
+
+**Description:** Dive into the world of GPTScript, an innovative scripting language designed to harness the power of AI. This blog article explores the features, benefits, and potential applications of GPTScript, providing insights into how it can revolutionize the way developers and businesses approach automation and intelligent scripting. Discover how GPTScript can streamline your workflows and enhance productivity with its advanced AI capabilities.

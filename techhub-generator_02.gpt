@@ -1,0 +1,14 @@
+tools: mkdir, sys.write
+description: Creates a Techhub thumbnail and title using a script.
+args: link: The web link for which the title and thumbnail will be created.
+
+Do the following steps in ascending order:
+1. Develop a suitable title for the Techhub based on the link. Also create a description for a blog article based on the link.
+2. Create a slug based on the '$(techup-title) and then create a folder with the slug name if it foes not already
+
+---
+
+name: mkdir 
+tools: sys.write
+description: Creates a folder in our system. 
+args: slug: Path to the folder to be created.

@@ -1,0 +1,45 @@
+tools: article-generator, thumb-generator, mkdir, sys.write, sys.download
+description: Generates a Blog Article title and thumbnail based on a link.
+Model Name: gpt-4o
+args: link: The web link for which the title and thumbnail will be created.
+
+Do the following steps in acsending order:
+1. Develop a suitable title for the blog article based on the link. Also create a description for a blog article based on the link.
+2. Create a slug based on the '$(techup-title) and then create a folder with the slug name if it does not already
+3. Call thumb-generator to illustrate it.
+4. Download the illustration to a file at '${slug}/thumb.png'.
+5. Call the article-generator to generate the '${slug}/index.md' file
+
+---
+name: mkdir
+tools: sys.write
+description: Creates a folder in your system
+args: slug: Path to the folder to be created.
+
+#!bash
+
+mkdir -p "${slug}"
+
+---
+name: thumb-generator
+tools: github.com/gptscript-ai/image-generation
+description: Generates a YouTube thumbnail.
+args: link: The link to generate thumbnail from.
+
+Do the following steps in acsending order: 
+
+1. Come up with a background color to represent the $link which can be used as the background color for the thumbnail.
+2. Think of a good prompt to generate an image to represent the content of '$(techup-description). Make sure to to include the '${techup-title} in one sentence inside a colored box somewhere in the thumbnail. Only return the URL of the illustration. The thumbnail should be 1792x1024.
+3. Use the ${background-color} to make sure the edges of the thumbnails fades out.
+4. Download the image from the provided URL of the illustration.
+
+---
+name: article-generator
+tools: sys.write
+description: Create an index.md file with the basic information.
+
+Do the following steps in acsending order: 
+1. create an '${slug}/index.md file 
+2. add at the beginning of the file the basic infromation '$(slug). 
+3. Create with the correct markdown syntax the '$(techup-title) as heading of this article
+4. use the'$(techup-description) to write a outline with most important information for the technical blog article
